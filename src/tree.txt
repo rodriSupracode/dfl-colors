@@ -1,0 +1,43 @@
+Listado de rutas de carpetas
+El número de serie del volumen es A0FF-DF51
+C:.
+¦   tree.txt
+¦   
++---api
++---app
+¦   ¦   globals.css
+¦   ¦   layout.tsx
+¦   ¦   page.tsx
+¦   ¦   
+¦   +---about
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---contact
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---empresa
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---productos
+¦           page.tsx
+¦           
++---components
+¦       Distribuidores.tsx
+¦       Header.tsx
+¦       OurServices.tsx
+¦       OurTeam.tsx
+¦       ProductList.tsx
+¦       RegisterUser.tsx
+¦       Wellcome.tsx
+¦       
++---hooks
++---lib
++---styles
+¦       globals.css
+¦       layout.css
+¦       tailwind.css
+¦       variables.css
+¦       
++---utils
+        db.tsx
+        

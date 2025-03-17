@@ -2,10 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Roboto } from "next/font/google";
 
-const roboto = Roboto({
-  weight: "600", // Regular
-  subsets: ["latin"], // Soporte para caracteres latinos
-});
+const roboto = Roboto({ weight: "600", subsets: ["latin"] });
 
 export default function Header() {
   return (

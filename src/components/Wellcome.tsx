@@ -1,22 +1,9 @@
 import Image from "next/image";
-import { Montserrat } from "next/font/google";
-import { Roboto } from "next/font/google";
-import { Varela_Round } from "next/font/google";
+import { Varela_Round, Roboto, Montserrat } from "next/font/google";
 
-const montserrat = Montserrat({
-  weight: "500", // Regular
-  subsets: ["latin"], // Soporte para caracteres latinos
-});
-
-const roboto = Roboto({
-  weight: "600", // Regular
-  subsets: ["latin"], // Soporte para caracteres latinos
-});
-
-const varela_round = Varela_Round({
-  weight: "400", // Regular
-  subsets: ["latin"], // Soporte para caracteres latinos
-});
+const montserrat = Montserrat({ weight: "500", subsets: ["latin"] });
+const roboto = Roboto({ weight: "600", subsets: ["latin"] });
+const varela_round = Varela_Round({ weight: "400", subsets: ["latin"] });
 
 export default function Wellcome() {
   return (
@@ -124,6 +111,7 @@ export default function Wellcome() {
         </section>
       </div>
 
+      <div className="h-[131px]"></div>
       <svg
         className="
           w-[300%] 

@@ -1,16 +1,9 @@
 import Image from "next/image";
-import { Varela_Round } from "next/font/google";
-import { Roboto } from "next/font/google";
+import { Varela_Round, Roboto, Montserrat } from "next/font/google";
 
-const varela_round = Varela_Round({
-  weight: "400", // Regular
-  subsets: ["latin"], // Soporte para caracteres latinos
-});
-
-const roboto = Roboto({
-  weight: "500", // Regular
-  subsets: ["latin"], // Soporte para caracteres latinos
-});
+const montserrat = Montserrat({ weight: "500", subsets: ["latin"] });
+const roboto = Roboto({ weight: "600", subsets: ["latin"] });
+const varela_round = Varela_Round({ weight: "400", subsets: ["latin"] });
 
 export default function ProductList() {
   return (
@@ -30,7 +23,13 @@ export default function ProductList() {
       </h2>
       <div className="flex flex-col items-center text-center">
         <section>
-          <div className="flex flex-wrap gap-4">
+          <div
+            className="flex flex-nowrap gap-4 overflow-x-auto"
+            style={{
+              marginLeft: "clamp(10px, 1vw, 15px)",
+              marginRight: "clamp(10px, 1vw, 15px)",
+            }}
+          >
             {[
               {
                 src: "/images/barnices-dfl.jpg",
@@ -68,35 +67,49 @@ export default function ProductList() {
                 link: "https://dflcolors.com/categoria-producto/ropa-de-trabajo/",
               },
             ].map((item, index) => (
-              <div key={index} className="text-center">
+              <div
+                key={index}
+                className="
+                
+                text-center 
+                min-w-[4px] max-w-[158px]
+                p-0 m-1
+              "
+              >
                 <Image
                   src={item.src}
                   alt={item.alt}
                   width={158}
                   height={158}
+                  style={{
+                    marginBottom: "clamp(1px, 1vw, 15px)",
+                  }}
                   className="
-                  outline outline-3 outline-gray-300          
-                  rounded-full 
+                  border-4 border-gray-300
+                  rounded-full
                   object-cover
-                  p-0 m-0 mx-[12px] mb-[20px]
-                "
+                  p-0 m-0
+                  w-full min-w-[4px] max-w-[158px] 
+                  aspect-square
+          "
                 />
+
                 <a
                   href={item.link}
+                  style={{
+                    fontSize: "clamp(1px, 1.18vw, 15px)",
+                    lineHeight: "clamp(1px, 1.18vw, 15px)",
+                    padding: "clamp(1px, 1vw, 12px) clamp(1px, 1vw, 23px)",
+                    color: "white",
+                    transition: "all 0.3s ease",
+                  }}
                   className={`
                   ${roboto.className}
-                  text-[15px] 
-                  font-medium 
-                  leading-[15px] 
-                  text-white 
                   bg-[rgb(8,16,179)]
-                  max-w-[159px] 
-                  inline-block 
-                  text-center 
-                  p-0 m-0 p-[12px_23px] 
-                  rounded-[3px] 
+                  inline-block
+                  text-center
+                  rounded-[3px]
                   transition-all duration-300
-                  
                 `}
                 >
                   {item.alt}
@@ -105,25 +118,25 @@ export default function ProductList() {
             ))}
           </div>
         </section>
+
         <div className="mt-4">
           <a
             href="https://dflcolors.com/productos/"
-            className="
-          font-montserrat
+            className={`
+          ${montserrat.className}
           text-[27px]
           font-medium
           leading-[27px]
           text-[rgb(223,42,53)]
           text-center
           bg-transparent
-          h-[28px]
-          w-[130px] 
+          h-[28px] 
           inline-block
-          p-0
+          p-0 mt-[40px]
           transition-all duration-300
-        "
+        `}
           >
-            Ver todos
+            Ver todos 🡲
           </a>
         </div>
       </div>
