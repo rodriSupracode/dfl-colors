@@ -1,8 +1,7 @@
 import Image from "next/image";
-import { Varela_Round, Roboto, Montserrat } from "next/font/google";
+import { Varela_Round, Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({ weight: "300", subsets: ["latin"] });
-const roboto = Roboto({ weight: "600", subsets: ["latin"] });
 const varela_round = Varela_Round({ weight: "400", subsets: ["latin"] });
 
 export default function OurServices() {

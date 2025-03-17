@@ -1,5 +1,3 @@
-import Link from "next/link";
-import Image from "next/image"; // 👈 Importamos el componente Image de Next.js
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 import Header from "@/components/Header";
