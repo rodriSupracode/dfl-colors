@@ -18,18 +18,18 @@ export default function Header() {
 
   return (
     <header className="w-full flex flex-col justify-center">
-      <div className="flex flex-row justify-center mb-6">
-        <div className="ml-6 mt-6 mr-3  max-w-xs min-w-3xs">
+      <div className="border-4 flex flex-row justify-center mb-6">
+        <div className="border-4 ml-6 mt-6 mr-3">
           <Link href="/">
             <ImgCustom
               src="/images/logo.png"
               alt="Logo DFL Colors"
-              className="max-w-xs min-w-3xs"
+              className="max-w-[4px]"
             />
           </Link>
         </div>
         <nav className="text-blue-800 flex flex-col justify-end">
-          <div className="h-full flex items-end justify-center lg:justify-end">
+          <div className="h-full flex flex-col justify-end items-center lg:items-end">
             {/* Menú para pantallas mayores de lg */}
             <ul className="hidden lg:flex lg:justify-center lg:items-center list-none gap-x-10 px-4">
               {menuItems.map(({ href, label }) => (
@@ -64,20 +64,20 @@ export default function Header() {
             </ul>
 
             {/* Menú para pantalla menores de lg */}
-            <div className="flex lg:hidden mt-6 mr-6 mb-6 ml-3">
+            <div className="border-4 flex lg:hidden mt-6 mr-6 mb-6 ml-3">
               <button onClick={() => setMenuOpen(!menuOpen)}>
                 {menuOpen ? (
-                  <FiX className="text-5xl" />
+                  <FiX className="text-3xl" />
                 ) : (
-                  <FiMenu className="text-5xl" />
+                  <FiMenu className="text-3xl" />
                 )}
               </button>
-              <div className="relative">
+              <div className="border-4 relative">
                 <Link
                   href="/carrito"
                   className="transition-colors duration-300 hover:text-[#DF2A35]"
                 >
-                  <FiShoppingCart className="text-5xl ml-5" />
+                  <FiShoppingCart className="text-3xl ml-5" />
                 </Link>
 
                 {/* Contador de artículos */}
