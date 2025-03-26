@@ -16,13 +16,11 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body>
-        <div className="w-full">
-          <Header />
-        </div>
+        <Header />
 
         <main>{children}</main>
 
-        <footer></footer>
+        <footer />
       </body>
     </html>
   );
