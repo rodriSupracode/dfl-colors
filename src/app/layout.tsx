@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import "./globals.css"; // Asegúrate de que este archivo existe y contiene las directivas de Tailwind
+import { App } from "./App";
 
 export const metadata: Metadata = {
   title: "DFL Colors",
@@ -16,11 +17,13 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body>
-        <Header />
+        <App>
+          <Header />
 
-        <main>{children}</main>
+          <main>{children}</main>
 
-        <footer />
+          <footer />
+        </App>
       </body>
     </html>
   );
