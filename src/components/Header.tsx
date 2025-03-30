@@ -17,77 +17,75 @@ export default function Header() {
   ];
 
   return (
-    <header className="w-full flex flex-col justify-center">
-      <div className="flex flex-row justify-center mb-6">
-        <div className="ml-6 mt-6 mr-3  max-w-xs min-w-3xs">
+    <header className="flex flex-col">
+      <div className="flex flex-row justify-center mb-3 lg:mb-6">
+        <div className="pl-3 lg:pl-6 pt-3 lg:pt-6 pr-3 lg:pr-6">
           <Link href="/">
             <ImgCustom
               src="/images/logo.png"
               alt="Logo DFL Colors"
-              className="max-w-xs min-w-3xs"
+              className="max-w-48 lg:max-w-80"
             />
           </Link>
         </div>
+
         <nav className="text-blue-800 flex flex-col justify-end">
-          <div className="h-full flex items-end justify-center lg:justify-end">
-            {/* Menú para pantallas mayores de lg */}
-            <ul className="hidden lg:flex lg:justify-center lg:items-center list-none gap-x-10 px-4">
-              {menuItems.map(({ href, label }) => (
-                <li
-                  key={href}
-                  className="whitespace-nowrap font-semibold text-lg"
-                >
-                  <Link
-                    href={href}
-                    className="transition-colors duration-300 hover:text-[#DF2A35]"
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-              <div className="relative">
+          {/* Menú para pantallas mayores de lg */}
+          <ul className="hidden lg:flex justify-end list-none gap-x-10 mx-10">
+            {menuItems.map(({ href, label }) => (
+              <li
+                key={href}
+                className="whitespace-nowrap font-semibold text-lg"
+              >
                 <Link
-                  href="/carrito"
+                  href={href}
                   className="transition-colors duration-300 hover:text-[#DF2A35]"
                 >
-                  <FiShoppingCart className="text-2xl" />
+                  {label}
                 </Link>
-                {/* Contador de artículos */}
-                <div
-                  className={`absolute bottom-[-6px] right-[-10px] w-4 h-4 rounded-full flex items-center justify-center 
+              </li>
+            ))}
+            <div className="relative">
+              <Link
+                href="/carrito"
+                className="transition-colors duration-300 hover:text-[#DF2A35]"
+              >
+                <FiShoppingCart className="text-3xl" />
+              </Link>
+              {/* Contador de artículos */}
+              <div
+                className={`absolute bottom-[-7px] right-[-7px] w-5 h-5 rounded-full flex items-center justify-center 
       ${cartItemCount > 0 ? "bg-red-500" : "bg-gray-400"} 
       text-white text-xs font-bold`}
-                >
-                  {cartItemCount}
-                </div>
+              >
+                {cartItemCount}
               </div>
-            </ul>
+            </div>
+          </ul>
 
-            {/* Menú para pantalla menores de lg */}
-            <div className="flex lg:hidden mt-6 mr-6 mb-6 ml-3">
-              <button onClick={() => setMenuOpen(!menuOpen)}>
-                {menuOpen ? (
-                  <FiX className="text-5xl" />
-                ) : (
-                  <FiMenu className="text-5xl" />
-                )}
-              </button>
-              <div className="relative">
-                <Link
-                  href="/carrito"
-                  className="transition-colors duration-300 hover:text-[#DF2A35]"
-                >
-                  <FiShoppingCart className="text-5xl ml-5" />
-                </Link>
-
-                {/* Contador de artículos */}
-                <div
-                  className={`absolute bottom-[-8px] right-[-8px] w-6 h-6 rounded-full flex items-center justify-center 
+          {/* Menú para pantalla menores de lg */}
+          <div className="flex lg:hidden mr-6 ml-3 mb-3">
+            <button onClick={() => setMenuOpen(!menuOpen)}>
+              {menuOpen ? (
+                <FiX className="text-4xl" />
+              ) : (
+                <FiMenu className="text-4xl" />
+              )}
+            </button>
+            <div className="relative">
+              <Link
+                href="/carrito"
+                className="transition-colors duration-300 hover:text-[#DF2A35]"
+              >
+                <FiShoppingCart className="text-4xl ml-4" />
+              </Link>
+              {/* Contador de artículos */}
+              <div
+                className={`absolute bottom-[-8px] right-[-8px] w-6 h-6 rounded-full flex items-center justify-center 
         ${cartItemCount > 0 ? "bg-red-500" : "bg-gray-400"} 
         text-white text-xs font-bold`}
-                >
-                  {cartItemCount}
-                </div>
+              >
+                {cartItemCount}
               </div>
             </div>
           </div>
