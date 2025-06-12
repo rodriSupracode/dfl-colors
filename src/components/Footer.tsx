@@ -1,4 +1,3 @@
-// Archivo: /src/components/Footer.tsx
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -11,16 +10,12 @@ export default function Footer() {
 
   useEffect(() => {
     setIsClient(true);
-
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
-
-      // Mostrar botón si no está en la parte superior (más de 100px) ni en la parte inferior (a menos de 100px del final)
       const isNotAtTop = scrollPosition > 1;
       const isNotAtBottom = scrollPosition + windowHeight < documentHeight - 1;
-
       setShowButton(isNotAtTop && isNotAtBottom);
     };
 
