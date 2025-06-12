@@ -20,7 +20,7 @@ export default function Footer() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Ejecutar una vez al montar
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
