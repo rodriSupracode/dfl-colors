@@ -20,7 +20,9 @@ export default function Header() {
 
   return (
     <header className="text-blue-800">
-      <div className="flex  flex-1 flex-row items-center justify-between px-4">
+      <div className="flex flex-row items-center justify-between px-4">
+
+        {/* Botón de menú para pantallas menores de md */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden block"
@@ -31,9 +33,10 @@ export default function Header() {
             <FiMenu className="text-2xl" />
           )}
         </button>
-
+        
+        {/* Logo */}
         <Link href="/">
-          <div className="min-w-40 w-40">
+          <div className="w-40">
             <ImgCustom
               src="/images/logo.png"
               alt="Logo DFL Colors"
@@ -42,7 +45,7 @@ export default function Header() {
           </div>
         </Link>
 
-        {/* Menú para pantallas mayores de lg */}
+        {/* Menú para pantallas mayores de md */}
         <ul className="hidden md:flex  list-none gap-x-10 mx-10">
           {menuItems.map(({ href, label }) => (
             <li key={href}>
@@ -51,8 +54,7 @@ export default function Header() {
           ))}
         </ul>
 
-        {/* Menú para pantalla menores de lg */}
-
+        {/* Icono de carrito */}
         <Shopping />
       </div>
       {menuOpen && <Menu menuItems={menuItems} />}
