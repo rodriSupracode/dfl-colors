@@ -14,8 +14,14 @@ export default function Footer() {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
+
       const isNotAtTop = scrollPosition > 1;
       const isNotAtBottom = scrollPosition + windowHeight < documentHeight - 1;
+
+      // Mostrar botón si no está en la parte superior (más de 100px) ni en la parte inferior (a menos de 100px del final)
+      const isNotAtTop = scrollPosition > 1;
+      const isNotAtBottom = scrollPosition + windowHeight < documentHeight - 1;
+
       setShowButton(isNotAtTop && isNotAtBottom);
     };
 
