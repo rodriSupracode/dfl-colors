@@ -16,12 +16,15 @@ export default function Footer() {
       const documentHeight = document.documentElement.scrollHeight;
       const isNotAtTop = scrollPosition > 1;
       const isNotAtBottom = scrollPosition + windowHeight < documentHeight - 1;
+      const isNotAtTop = scrollPosition > 1;
+      const isNotAtBottom = scrollPosition + windowHeight < documentHeight - 1;
+      const isNotAtTop = scrollPosition > 1;
+      const isNotAtBottom = scrollPosition + windowHeight < documentHeight - 1;
       setShowButton(isNotAtTop && isNotAtBottom);
     };
-
     window.addEventListener("scroll", handleScroll);
     handleScroll();
-
+    handleScroll(); // Ejecutar una vez al montar
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
