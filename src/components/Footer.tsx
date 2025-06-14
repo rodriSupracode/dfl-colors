@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import ImgCustom from "./ImgCustom";
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import ImgCustom from './ImgCustom';
 
 export default function Footer() {
   const [isClient, setIsClient] = useState(false);
@@ -18,35 +18,30 @@ export default function Footer() {
       const isNotAtTop = scrollPosition > 1;
       const isNotAtBottom = scrollPosition + windowHeight < documentHeight - 1;
 
-      // Mostrar botón si no está en la parte superior (más de 100px) ni en la parte inferior (a menos de 100px del final)
-      const isNotAtTop = scrollPosition > 1;
-      const isNotAtBottom = scrollPosition + windowHeight < documentHeight - 1;
-
       setShowButton(isNotAtTop && isNotAtBottom);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     handleScroll(); // Ejecutar una vez al montar
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <footer className="bg-gray-700 text-white py-6">
       <div
-        className="flex 
+        className="flex
                    flex-col md:flex-row
                    items-center md:items-start
                    md:justify-around
-                   w-full max-w-6xl 
-                   mx-auto 
+                   w-full max-w-6xl
+                   mx-auto
                    px-2"
       >
-        {/* Sección izquierda: Datos de contacto y logo */}
         <div
-          className="bg-white text-black rounded-xl  
+          className="bg-white text-black rounded-xl
                      w-full md:w-auto
-                     m-2 
+                     m-2
                      p-4"
         >
           <Link href="/">
@@ -83,11 +78,9 @@ export default function Footer() {
         </div>
         {/* Sección central y derecha: Enlaces de navegación y redes sociales */}
         <div
-          className="flex 
-                     flex-1 md:flex-none
-                     flex-col md:flex-row 
-                     justify-between md:justify-start 
-                     md:items-start 
+          className="flex flex-1 md:flex-none flex-col md:flex-row
+                     justify-between md:justify-start
+                     md:items-start
                      w-full md:w-auto"
         >
           {/* Sección central: Enlaces de navegación */}
@@ -170,7 +163,7 @@ export default function Footer() {
       {/* Botón Volver arriba */}
       {isClient && showButton && (
         <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="fixed bottom-4 right-4 bg-blue-800 text-white p-2 rounded-full hover:bg-blue-900 w-12 h-12"
         >
           ↑

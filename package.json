@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@heroui/react": "^2.7.8",
+    "@stylistic/eslint-plugin": "^4.4.1",
     "@vis.gl/react-mapbox": "^8.0.4",
     "framer-motion": "^12.6.2",
     "mapbox-gl": "^3.12.0",
@@ -27,6 +28,19 @@
     "eslint": "^9",
     "eslint-config-next": "15.1.7",
     "postcss": "^8",
-    "typescript": "^5"
+    "prettier": "^3.5.3",
+    "typescript": "^5",
+    "@next/eslint-plugin-next": "15.0.4",
+    "@typescript-eslint/eslint-plugin": "8.11.0",
+    "@typescript-eslint/parser": "8.11.0",
+    "autoprefixer": "10.4.19",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-unused-imports": "4.1.4"
   }
 }

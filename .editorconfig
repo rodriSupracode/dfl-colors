@@ -1,0 +1,24 @@
+# Top-most EditorConfig file
+root = true
+
+# Tab indentation
+[*]
+indent_style = space
+indent_size = 2
+
+# Insert final newline
+[*]
+insert_final_newline = true
+
+# Trim trailing whitespace
+[*]
+trim_trailing_whitespace = true
+
+# Single quote for TypeScript files
+[*.ts]
+quote_type = single
+
+# No max line length for Markdown files
+[*.md]
+max_line_length = off
+trim_trailing_whitespace = false

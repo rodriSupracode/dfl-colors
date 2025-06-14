@@ -1,27 +1,26 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
-import ImgCustom from "./ImgCustom";
-import { Menu } from "./Menu";
-import { Shopping } from "./Shopping";
-import { NavItem } from "./NavItem";
+import Link from 'next/link';
+import { useState } from 'react';
+import { FiMenu, FiX } from 'react-icons/fi';
+import ImgCustom from './ImgCustom';
+import { Menu } from './Menu';
+import { Shopping } from './Shopping';
+import { NavItem } from './NavItem';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const menuItems = [
-    { href: "/categorias", label: "Categorías" },
-    { href: "/destacados", label: "Destacados" },
-    { href: "https://www.facebook.com/ficolopez63", label: "¡Ofertas!" },
-    { href: "/empresa", label: "Sobre nosotros" },
+    { href: '/categorias', label: 'Categorías' },
+    { href: '/destacados', label: 'Destacados' },
+    { href: 'https://www.facebook.com/ficolopez63', label: '¡Ofertas!' },
+    { href: '/empresa', label: 'Sobre nosotros' },
   ];
 
   return (
     <header className="text-blue-800">
       <div className="flex flex-row items-center justify-between px-4">
-
         {/* Botón de menú para pantallas menores de md */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -33,7 +32,7 @@ export default function Header() {
             <FiMenu className="text-2xl" />
           )}
         </button>
-        
+
         {/* Logo */}
         <Link href="/">
           <div className="w-40">
