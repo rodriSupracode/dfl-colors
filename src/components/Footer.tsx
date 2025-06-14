@@ -1,49 +1,11 @@
-'use client';
-
-import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import ImgCustom from './ImgCustom';
 
 export default function Footer() {
-  const [isClient, setIsClient] = useState(false);
-  const [showButton, setShowButton] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-
-      const isNotAtTop = scrollPosition > 1;
-      const isNotAtBottom = scrollPosition + windowHeight < documentHeight - 1;
-
-      setShowButton(isNotAtTop && isNotAtBottom);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Ejecutar una vez al montar
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <footer className="bg-gray-700 text-white py-6">
-      <div
-        className="flex
-                   flex-col md:flex-row
-                   items-center md:items-start
-                   md:justify-around
-                   w-full max-w-6xl
-                   mx-auto
-                   px-2"
-      >
-        <div
-          className="bg-white text-black rounded-xl
-                     w-full md:w-auto
-                     m-2
-                     p-4"
-        >
+      <div className="flex flex-col md:flex-row items-center md:items-start md:justify-around w-full max-w-6xl mx-auto px-2">
+        <div className="bg-white text-black rounded-xl w-full md:w-auto m-2 p-4">
           <Link href="/">
             <div className="w-40">
               <ImgCustom
@@ -77,12 +39,7 @@ export default function Footer() {
           </div>
         </div>
         {/* Sección central y derecha: Enlaces de navegación y redes sociales */}
-        <div
-          className="flex flex-1 md:flex-none flex-col md:flex-row
-                     justify-between md:justify-start
-                     md:items-start
-                     w-full md:w-auto"
-        >
+        <div className="flex flex-1 md:flex-none flex-col md:flex-row justify-between md:justify-start md:items-start w-full md:w-auto">
           {/* Sección central: Enlaces de navegación */}
           <div className="w-full md:w-auto px-4 mt-10">
             <h3 className="text-xl font-bold mb-2">Explora</h3>
@@ -109,7 +66,6 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-
           {/* Sección derecha: Redes sociales y Newsletter */}
           <div className="w-full md:w-auto px-4 mt-10 md:ml-10">
             <h3 className="text-xl font-bold">Síguenos</h3>
@@ -159,16 +115,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-      {/* Botón Volver arriba */}
-      {isClient && showButton && (
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-4 right-4 bg-blue-800 text-white p-2 rounded-full hover:bg-blue-900 w-12 h-12"
-        >
-          ↑
-        </button>
-      )}
     </footer>
   );
 }
