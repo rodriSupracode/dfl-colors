@@ -1,7 +1,30 @@
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import ImgCustom from "./ImgCustom";
 
 export default function Footer() {
+  const [isClient, setIsClient] = useState(false);
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const isNotAtTop = scrollPosition > 1;
+      const isNotAtBottom = scrollPosition + windowHeight < documentHeight - 1;
+      setShowButton(isNotAtTop && isNotAtBottom);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <footer className="bg-gray-700 text-white py-6">
       <div
@@ -137,6 +160,16 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Botón Volver arriba */}
+      {isClient && showButton && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="fixed bottom-4 right-4 bg-blue-800 text-white p-2 rounded-full hover:bg-blue-900 w-12 h-12"
+        >
+          ↑
+        </button>
+      )}
     </footer>
   );
 }
